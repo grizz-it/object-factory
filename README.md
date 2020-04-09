@@ -15,7 +15,7 @@ composer require grizz-it/object-factory
 
 ## Usage
 
-
+Please see the [documentation](docs/index.md) for information on the usage of this package.
 
 ## Change log
 
