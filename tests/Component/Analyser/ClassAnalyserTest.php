@@ -1,8 +1,10 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
  */
+
 namespace GrizzIt\ObjectFactory\Tests\Component\Analyser;
 
 use PHPUnit\Framework\TestCase;
@@ -14,6 +16,7 @@ use GrizzIt\ObjectFactory\Exception\NonInstantiableClassException;
 /**
  * @coversDefaultClass \GrizzIt\ObjectFactory\Component\Analyser\ClassAnalyser
  * @covers \GrizzIt\ObjectFactory\Exception\NonInstantiableClassException
+ * @covers \GrizzIt\ObjectFactory\Component\Reflector\MethodReflector
  */
 class ClassAnalyserTest extends TestCase
 {
@@ -22,7 +25,6 @@ class ClassAnalyserTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::analyse
-     * @covers ::reflect
      */
     public function testAnalyse(): void
     {

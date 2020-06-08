@@ -7,12 +7,12 @@
 
 namespace GrizzIt\ObjectFactory\Common;
 
-interface ClassAnalyserInterface
+interface MethodReflectorInterface
 {
     /**
-     * Analyses the constructor of a class and returns a configuration array.
+     * Analyses a method of a class and returns a configuration array.
      *
      * @return array
      */
-    public function analyse(string $class): array;
+    public function reflect(string $class, string $method): array;
 }

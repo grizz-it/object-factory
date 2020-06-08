@@ -120,3 +120,5 @@ Both of these declaration methods can be used and mixed throughout the declarati
 [Back to usage index](index.md)
 
 [Analysing a class](analysing-a-class.md)
+
+[Analysing a method](analysing-a-method.md)

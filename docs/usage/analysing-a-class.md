@@ -34,4 +34,6 @@ class should be instantiated.
 
 [Back to usage index](index.md)
 
+[Analysing a method](analysing-a-method.md)
+
 [Creating objects](creating-objects.md)

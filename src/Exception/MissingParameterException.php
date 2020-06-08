@@ -10,28 +10,23 @@ namespace GrizzIt\ObjectFactory\Exception;
 use Exception;
 use Throwable;
 
-class CanNotCreateObjectException extends Exception
+class MissingParameterException extends Exception
 {
     /**
      * Constructor.
      *
-     * @param string $class
      * @param array $parameterConfig
-     * @param array $parameters
+     * @param mixed $parameter
      * @param Throwable $previous
      */
     public function __construct(
-        string $class,
         array $parameterConfig,
-        array $parameters,
         Throwable $previous = null
     ) {
         parent::__construct(
             sprintf(
-                'Can not create class %s, with configuration %s, received %s.',
-                $class,
-                print_r($parameterConfig, true),
-                print_r($parameters, true)
+                'Parameter missing for %s.',
+                print_r($parameterConfig, true)
             ),
             0,
             $previous

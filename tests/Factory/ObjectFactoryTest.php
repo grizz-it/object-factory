@@ -1,8 +1,10 @@
 <?php
+
 /**
  * Copyright (C) GrizzIT, Inc. All rights reserved.
  * See LICENSE for license details.
  */
+
 namespace GrizzIt\ObjectFactory\Tests\Factory;
 
 use PHPUnit\Framework\TestCase;
@@ -18,6 +20,7 @@ use GrizzIt\ObjectFactory\Exception\InvalidParameterTypeException;
  * @coversDefaultClass \GrizzIt\ObjectFactory\Factory\ObjectFactory
  * @covers \GrizzIt\ObjectFactory\Exception\CanNotCreateObjectException
  * @covers \GrizzIt\ObjectFactory\Exception\InvalidParameterTypeException
+ * @covers \GrizzIt\ObjectFactory\Exception\MissingParameterException
  */
 class ObjectFactoryTest extends TestCase
 {
@@ -26,6 +29,7 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
      * @covers ::parameterByType
      */
     public function testCreate(): void
@@ -59,6 +63,8 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
+     * @covers ::parameterByType
      */
     public function testNotInstantiableClass(): void
     {
@@ -77,6 +83,8 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
+     * @covers ::parameterByType
      */
     public function testNotProvidedParameter(): void
     {
@@ -95,6 +103,7 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
      * @covers ::parameterByType
      */
     public function testInvalidTypeParameter(): void
@@ -116,6 +125,7 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
      * @covers ::parameterByType
      */
     public function testValidTypeParameter(): void
@@ -138,6 +148,7 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
      * @covers ::parameterByType
      */
     public function testInvalidAggregatedInstanceParameter(): void
@@ -162,6 +173,7 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
      * @covers ::parameterByType
      */
     public function testInvalidConfiguredInstanceParameter(): void
@@ -183,6 +195,7 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
      * @covers ::parameterByType
      */
     public function testValidPassthruInstanceParameter(): void
@@ -205,6 +218,7 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
      * @covers ::parameterByType
      */
     public function testVariadicParameter(): void
@@ -235,6 +249,7 @@ class ObjectFactoryTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::create
+     * @covers ::translate
      * @covers ::parameterByType
      */
     public function testVariadicParameterFailure(): void
