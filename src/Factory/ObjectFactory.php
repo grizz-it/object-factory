@@ -21,7 +21,7 @@ class ObjectFactory implements ObjectFactoryInterface
      *
      * @var ClassAnalyserInterface
      */
-    private $classAnalyser;
+    private ClassAnalyserInterface $classAnalyser;
 
     /**
      * Constructor.
@@ -78,6 +78,9 @@ class ObjectFactory implements ObjectFactoryInterface
      * Converts the parameter order based on the configuration and returns a
      * array which can be passed variadically.
      *
+     * @param array $config
+     * @param array $parameters
+     *
      * @return array
      */
     private function translate(array $config, array $parameters): array
@@ -117,7 +120,7 @@ class ObjectFactory implements ObjectFactoryInterface
         return $invokeParameters;
     }
 
-        /**
+    /**
      * Checks the parameter type.
      *
      * @param array $parameterConfig
@@ -127,8 +130,10 @@ class ObjectFactory implements ObjectFactoryInterface
      *
      * @throws InvalidParameterTypeException When the type can not be resolved.
      */
-    private function parameterByType(array $parameterConfig, $parameter)
-    {
+    private function parameterByType(
+        array $parameterConfig,
+        mixed $parameter
+    ): mixed {
         if ($parameterConfig['builtin']) {
             if (
                 gettype(

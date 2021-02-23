@@ -15,8 +15,6 @@ class NonInstantiableClassException extends Exception
      * Constructor.
      *
      * @param array $parameterConfig
-     * @param mixed $parameter
-     * @param Throwable $previous
      */
     public function __construct(
         string $class

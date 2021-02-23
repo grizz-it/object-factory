@@ -21,14 +21,14 @@ class ClassAnalyser implements ClassAnalyserInterface
      *
      * @var StorageInterface
      */
-    private $analysisStorage;
+    private StorageInterface $analysisStorage;
 
     /**
      * Contains the method reflector.
      *
      * @var MethodReflectorInterface
      */
-    private $methodReflector;
+    private MethodReflectorInterface $methodReflector;
 
     /**
      * Constructor
@@ -48,6 +48,8 @@ class ClassAnalyser implements ClassAnalyserInterface
 
     /**
      * Analyses the constructor of a class and returns a configuration array.
+     *
+     * @param string $class
      *
      * @return array
      *

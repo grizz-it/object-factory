@@ -21,7 +21,7 @@ class InvalidParameterTypeException extends Exception
      */
     public function __construct(
         array $parameterConfig,
-        $parameter,
+        mixed $parameter,
         Throwable $previous = null
     ) {
         parent::__construct(

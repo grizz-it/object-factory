@@ -18,7 +18,7 @@ class MethodReflector implements MethodReflectorInterface
      *
      * @var array
      */
-    private $translations = [
+    private array $translations = [
         'bool' => 'boolean',
         'int' => 'integer',
         'float' => 'double',
@@ -30,7 +30,7 @@ class MethodReflector implements MethodReflectorInterface
      *
      * @var StorageInterface
      */
-    private $analysisStorage;
+    private StorageInterface $analysisStorage;
 
     /**
      * Constructor
@@ -44,6 +44,9 @@ class MethodReflector implements MethodReflectorInterface
 
     /**
      * Analyses a method of a class and returns a configuration array.
+     *
+     * @param string $class
+     * @param string $method
      *
      * @return array
      */
